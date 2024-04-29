@@ -1,0 +1,197 @@
+/* @settings
+
+name: Obsidian Ultima
+id: Obsidian_Ultima
+settings:
+    - 
+        id: body
+        title: Body
+        type: heading
+        level: 3
+    - 
+        id: font-text
+        title: Text Color
+        type: variable-color
+        format: hsl-split
+        default: '#007AFF'
+    - 
+        id: text_font
+        title: UI font
+        description: Font used for the user interface
+        type: variable-text
+        default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+    - 
+        id: eis-with-icons
+        title: Show icons in sidebar
+        description: When activated files and folders icons will be visible
+        type: class-toggle
+        default: true
+*/
+
+@charset "UTF-8";
+
+@font-face {
+    font-family:JetBrains Mono;
+    src:url(https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2) format("woff2"),url(https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf) format("truetype");
+    font-weight:400;
+    font-style:normal}*{-webkit-font-feature-settings:"liga" on,"calt" on;
+    font-feature-settings:"liga" on,"calt" on;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-family:JetBrains Mono
+}
+
+:root {
+	--color-var: rgb(0, 255, 140);
+	--accent-1: var(--color-var);
+	--interactive-accent: var(--color-var);
+	--color-accent: var(--color-var);
+	--blockquote-border-color: var(--color-var);
+}
+
+body {
+	/* Variables */
+	--background-elements-color: black;
+	
+	/* Text */
+	--default-font: "JetBrains Mono", monospace;
+	--text-normal: rgb(237, 237, 237);
+
+	--border-background: black;
+	--p-spacing: .25rem;
+
+	/* Headers */
+	--h1-color: rgb(98, 255, 116);
+	--h1-line-height: 3rem;
+	--h1-size: 30pt;
+
+	--h2-color: rgb(98, 255, 187);
+	--h2-line-height: 3rem;
+	--h2-size: 25pt;
+
+	--h3-color: rgb(111, 250, 255);
+	--h3-line-height: 3rem;
+	--h3-size: 22pt;
+
+	--h4-color: rgb(39, 172, 255);
+	--h4-line-height: 3rem;
+	--h4-size: 20pt;
+
+	--h5-color: rgb(68, 90, 255);
+	--h5-line-height: 3rem;
+	--h5-size: 16pt;
+
+	--h6-color: rgb(161, 98, 255);
+	--h6-line-height: 3rem;
+	--h6-size: 12pt;
+
+	/* Special Text */
+	/* Links */
+	--link-color: rgb(85, 162, 255);
+	--link-unresolved-color: rgb(101, 142, 169);
+	--link-color-hover: rgb(50, 233, 253);
+
+	/* Indentation */
+	--indentation-guide-color: rgb(61, 61, 61);
+
+	/* Text Format */
+	--bold-color: rgb(12, 255, 174);
+	--italic-color: rgb(84, 238, 255);
+	
+	/* Components */
+	/* UI Elements */
+	/* Icons */
+	--icon-color-hover: rgb(64, 120, 155);
+	--icon-color-focused: rgb(91, 149, 197);
+
+	
+	/* Workspace Navigation */
+	--nav-item-weight-hover: 300;
+	--nav-item-weight-active: 600;
+	--nav-item-color-hover: rgb(170, 212, 238);
+	--nav-item-color-active: rgb(140, 203, 255);
+
+	/* Graph */
+	--graph-line: rgb(42, 61, 74);
+	--graph-node: rgb(19, 90, 137);
+	--graph-node-unresolved: rgb(51, 56, 59);
+	--graph-node-focused: rgb(82, 130, 159);
+
+	/* Lists */
+	--list-marker-color: rgb(75, 148, 194);
+	--checkbox-border-color: rgb(75, 148, 194);
+	--checkbox-border-color-hover: rgb(140, 203, 255);
+	--checkbox-color: rgb(75, 148, 194);
+	--checkbox-color-hover: rgb(140, 203, 255);
+
+	/* Code */
+	--code-normal: rgb(245, 152, 131);
+}
+
+body.theme-dark {
+	--background-primary: #222222;
+	--background-secondary: #1b1b1b;
+
+	--heading-text-color: #fff;
+	--scrollbar-background: var(--background-elements-color);
+
+	/* Components */
+	/* UI Elements */
+	/* Window */
+	--titlebar-background: rgb(25, 25, 25);
+
+	/* Divider */
+	--divider-color: rgb(60, 60, 60);
+	--divider-color-hover: rgb(12, 99, 137);
+	
+	/* Ribbon */
+	--ribbon-background: var(--background-elements-color);
+
+	/* Tables */
+	--table-background: rgb(31, 31, 31);
+}
+
+.MJX-TEX,.cm-s-obsidian .cm-math {
+    color:#be98ff
+}
+
+.HyperMD-codeblock.HyperMD-codeblock-bg.cm-line span.cm-hmd-codeblock {
+	font-family: 'Fira Code', 'Courier New', Courier, monospace;
+	font-size: var(--font-ui-smaller);
+}
+
+/* Icons, credit to Obsidianotion theme */
+.eis-with-icons .nav-file-title:before {
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMCAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMTc1MTMgMTEuMjQ5NEgyLjAyNTg2QzEuNzU0MDQgMTEuMjQ5NCAxLjQ5MzM2IDExLjE0MTQgMS4zMDExNiAxMC45NDkyQzEuMTA4OTUgMTAuNzU3IDEuMDAwOTggMTAuNDk2NCAxLjAwMDk4IDEwLjIyNDVWMi4wMjU1MkMxLjAwMDk4IDEuNzUzNyAxLjEwODk1IDEuNDkzMDIgMS4zMDExNiAxLjMwMDgyQzEuNDkzMzYgMS4xMDg2MSAxLjc1NDA0IDEuMDAwNjQgMi4wMjU4NiAxLjAwMDY0SDUuNjY0MThDNS44MDY2NCAwLjk5NTYxMiA1Ljk0ODU4IDEuMDIwMzYgNi4wODA5MyAxLjA3MzNDNi4yMTMyOCAxLjEyNjI0IDYuMzMzMTQgMS4yMDYyMSA2LjQzMjgzIDEuMzA4MUw4Ljk0Mzc5IDMuOTcyNzlDOS4xMTgyIDQuMTcwMTIgOS4yMDk5NSA0LjQyNzAyIDkuMjAwMDEgNC42OTAyVjEwLjIyNDVDOS4yMDAwMSAxMC40OTY0IDkuMDkyMDMgMTAuNzU3IDguODk5ODMgMTAuOTQ5MkM4LjcwNzYzIDExLjE0MTQgOC40NDY5NCAxMS4yNDk0IDguMTc1MTMgMTEuMjQ5NFoiIHN0cm9rZT0iIzVBNUE1QSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0zIDguOTQzNkg3LjIwMiIgc3Ryb2tlPSIjNUE1QTVBIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTMgNi44OTM4SDcuMjAyIiBzdHJva2U9IiM1QTVBNUEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMy4wNTA3OCA0Ljg0Mzk5SDUuNjEyOTgiIHN0cm9rZT0iIzVBNUE1QSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+}
+
+.eis-with-icons .tree-item-self.mod-collapsible.nav-folder-title:before {
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMC4zMTU2IDEuMDMxMjVINS4xNTkzNEw0LjEyODA5IDBIMC42OTA1OTRDMC4zMTA3NSAwIDAuMDAzMDkzNzUgMC4zMDggMC4wMDMwOTM3NSAwLjY4NzVWMi40MDYyNUgwVjMuMDkzNzVIMC4wMDMwOTM3NVY3LjkwNjI1QzAuMDAzMDkzNzUgOC4yODYwOSAwLjMxMDc1IDguNTkzNzUgMC42OTA1OTQgOC41OTM3NUgxMC4zMTU2QzEwLjY5NTQgOC41OTM3NSAxMS4wMDMxIDguMjg2MDkgMTEuMDAzMSA3LjkwNjI1VjEuNzE4NzVDMTEuMDAzMSAxLjMzOTI1IDEwLjY5NTQgMS4wMzEyNSAxMC4zMTU2IDEuMDMxMjVaTTAuNjkwNTk0IDAuNjg3NUgzLjgxMzkxTDQuNjU4NSAxLjUxNzMxTDQuODc0NzIgMS43MTg3NUgxMC4zMTU5VjIuNDA2MjVIMC42OTA5MzhMMC42OTA1OTQgMC42ODc1Wk0wLjY5MDU5NCA3LjkwNjI1VjMuMDkzNzVIMTAuMzE1NlY3LjkwNjI1SDAuNjkwNTk0WiIgZmlsbD0iIzVBNUE1QSIvPgo8L3N2Zz4K");
+	margin-top: 3px;
+}
+
+.nav-header {
+	position: relative;
+	padding: var(--size-2-3);
+	padding-left: var(--size-4-3);
+	border-bottom: var(--divider-width) solid var(--divider-color);
+	border-left: 1px solid var(--color-base-20);
+	left: -1px; z-index: 2;
+}
+
+.eis-with-icons .tree-item-self.mod-collapsible.nav-folder-title:before,
+.eis-with-icons .nav-file-title:before {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 1;
+  margin-right: 5px;
+}
+
+.chronology-calendar-day.chronology-selected, .chronology-calendar-week-row.chronology-selected {
+	background-color: rgb(12, 255, 174);
+}
